@@ -1,0 +1,26 @@
+<div class="fileUploadContainer">
+
+  <input
+    type="file"
+    [id]="id"
+    [attr.accept]="accept"
+    [disabled]="isDisabled"
+    class="fileUploadInput peer"
+    (change)="onFileChange($event)"
+    (focus)="onFocus()"
+    (blur)="onBlur()"
+  />
+
+  <label [for]="id" class="fileUploadLabel">
+    {{ label }}
+    @if (isRequired) { <span class="required">*</span> }
+  </label>
+
+  <!-- File Name Display -->
+  @if (selectedFileName) {
+    <p class="fileNameText">
+      {{ selectedFileName }}
+    </p>
+  }
+
+</div>
