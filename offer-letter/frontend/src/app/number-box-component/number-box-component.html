@@ -1,0 +1,33 @@
+<div class="textBoxContainer">
+
+  <input
+    type="number"
+    [id]="id"
+    [placeholder]="placeHolder"
+    [attr.maxlength]="maxLength"
+    [readonly]="isReadOnly"
+    [tabindex]="tabindex"
+    class="textBoxInput peer"
+    (focus)="onFocus()"
+    (blur)="onBlur($event)"
+  />
+
+  <label
+    [for]="id"
+    class="textBoxLabel"
+  >
+    {{ label }}
+    @if (isRequired) { <span class="required">*</span> }
+  </label>
+
+  <!-- @if (showCharCount) {
+    <p
+      class="charCountText"
+      [class.showCount]="shouldShowCount"
+      [class.hideCount]="!shouldShowCount"
+    >
+      {{ currentCharCount }} of {{ maxLength }} characters left
+    </p>
+  } -->
+
+</div>
