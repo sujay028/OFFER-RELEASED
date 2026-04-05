@@ -1,0 +1,9 @@
+<button 
+  class="submit-btn" 
+  [disabled]="disabled || isLoading" 
+  (click)="onClick()"
+  [class.loading]="isLoading">
+  
+  <span *ngIf="!isLoading">{{ label }}</span>
+  <span *ngIf="isLoading">Processing...</span>
+</button>
